@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import axios from "../api/axios";
 
 const useCauseStore = create((set, get) => ({
