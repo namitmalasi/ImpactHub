@@ -11,8 +11,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <img className="h-8 w-auto" src="/logo.svg" alt="ImpactHub" />
-              <span className="ml-2 text-xl font-bold text-indigo-600">
+              <span className="ml-2 text-2xl font-bold text-indigo-600">
                 ImpactHub
               </span>
             </Link>
