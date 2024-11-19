@@ -2,22 +2,28 @@ import mongoose from "mongoose";
 
 const donationSchema = new mongoose.Schema(
   {
-    cause: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Cause",
-      required: true,
-    },
-    donor: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    amount: { type: Number, required: true },
-    stripePaymentId: { type: String },
+    causeId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Cause",
+      required: true,
+    },
+    amount: {
+      type: Number,
+      required: true,
+    },
     status: {
       type: String,
-      enum: ["pending", "completed", "failed"],
-      default: "pending",
+      enum: ["completed", "failed"],
+      default: "completed",
+    },
+    stripePaymentIntentId: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }
