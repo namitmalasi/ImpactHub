@@ -5,9 +5,8 @@ export const createPaymentIntent = async (req, res) => {
   try {
     const { amount, causeId } = req.body;
 
-    // Create a PaymentIntent
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: amount * 100, // Converting to cents
+      amount: amount * 100,
       currency: "usd",
       metadata: {
         causeId,
